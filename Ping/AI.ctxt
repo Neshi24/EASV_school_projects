@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=AI
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ AIPaddle\ here.\r\n\ @version\ a0.1\:\ chasing\ the\ ball\ on\ turn\r\n\ \r\n\ @author\ Roman\ Mas\u00E1r\r\n\ @version\ a0.1\r\n
+comment1.params=width\ height
+comment1.target=AI(int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=turn
+comment3.target=void\ setOnTurn(boolean)
+comment4.params=
+comment4.target=boolean\ isMoreToLeft()
+comment5.params=ball
+comment5.target=boolean\ isMoreToLeft(Ball)
+numComments=6

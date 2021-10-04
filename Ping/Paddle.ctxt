@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Paddle
+comment1.params=
+comment1.target=Paddle()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=int\ getSpeed()
+comment4.params=
+comment4.target=int\ getWidth()
+comment5.params=
+comment5.target=int\ getHeight()
+comment6.params=setSpeed
+comment6.target=void\ setSpeed(int)
+comment7.params=setWidth
+comment7.target=void\ setWidth(int)
+comment8.params=setHeight
+comment8.target=void\ setHeight(int)
+comment9.params=x
+comment9.target=double\ limitX(double)
+numComments=10

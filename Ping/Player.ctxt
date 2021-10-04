@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=width\ height
+comment1.target=Player(int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ checkInput()
+numComments=4
