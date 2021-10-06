@@ -6,38 +6,28 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+import java.net.*;
+
+
 public class GameWindowController {
 
     @FXML
-    Label dataReceived, connectionStatus;
+    private Label dataReceived;
 
     @FXML
-    TextField inputField;
+    private TextField inputField;
 
-    GameWindowModel gm;
+    private GameWindowModel gm;
 
     public GameWindowController(){
         gm = new GameWindowModel();
-        setupCanvas();
-    }
-
-    private void setupCanvas(){
-
     }
 
     @FXML
     protected void sendData(ActionEvent event){
-        String dataString = inputField.getText();
-
-        setupConnection();
-    }
-
-    private void setupConnection(){
-
-
-
-
-        String receivedData = "";
-        dataReceived.setText(receivedData);
+        String send = inputField.getText();
+        String resp = gm.connection().sendMessage(send);
+        dataReceived.setText(resp);
     }
 }
