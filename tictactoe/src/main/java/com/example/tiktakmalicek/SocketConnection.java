@@ -1,6 +1,5 @@
 package com.example.tiktakmalicek;
 
-
 import java.io.*;
 import java.net.*;
 import java.util.Arrays;
@@ -27,9 +26,9 @@ public class SocketConnection {
         }
     }
 
-    public String sendMessage(String msg){
+    public String sendMessage(String msg, String id){
         try{
-            out.println(msg);
+            out.println(id + ": " + msg);
             String resp = in.readLine();
             if("bye".equals(resp)){
                 System.out.println("Server disconnected!");

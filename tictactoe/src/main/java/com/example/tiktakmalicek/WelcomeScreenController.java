@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class WelcomeScreenController {
@@ -14,14 +16,45 @@ public class WelcomeScreenController {
     private Button startGameButton;
 
     @FXML
+    private TextField userNameField;
+
+    @FXML
+    private Label ipLabel;
+
+    @FXML
     protected void startGameButtonClick(ActionEvent event) throws Exception{
-        Node n = (Node) event.getSource();
-        Stage stage = (Stage) n.getScene().getWindow();
+        String userName = userNameField.getText();
+        if(userName.isBlank()){
+            //user didnt provide username
+            return;
+        }
+        //Node n = (Node) event.getSource();
+        //Stage stage = (Stage) n.getScene().getWindow();
+
+        Stage stage = new Stage();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("GameWindow.fxml"));
         Parent root = loader.load();
+        GameWindowController gwc = loader.getController();
+        gwc.setId(userName);
+        stage.setTitle(userName);
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void startLocalServerButton(ActionEvent event) throws Exception {
+        SocketServer server;
+        Thread t;
+        try{
+            server = new SocketServer();
+            t = new Thread(server);
+            t.start();
+        } catch (Exception e){
+
+        }
+
+        ipLabel.setText("Localhost server started");
     }
 }

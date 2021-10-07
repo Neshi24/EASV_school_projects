@@ -1,6 +1,6 @@
 package com.example.tiktakmalicek;
 
-public class GameWindowModel {
+public class GameWindowModel implements IGameModel {
 
     private SocketConnection sc;
 
@@ -17,5 +17,30 @@ public class GameWindowModel {
 
     private void establishConnection(){
         sc = new SocketConnection("127.0.0.1", 80);
+    }
+
+    @Override
+    public int getNextPlayer() {
+        return 0;
+    }
+
+    @Override
+    public boolean play(int col, int row) {
+        return false;
+    }
+
+    @Override
+    public boolean isGameOver() {
+        return false;
+    }
+
+    @Override
+    public int getWinner() {
+        return 0;
+    }
+
+    @Override
+    public void newGame() {
+
     }
 }
