@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
-public class GameWindowModel implements IGameModel {
+public class GameWindowModel {
 
     private SocketConnection sc;
     private GraphicsContext context;
@@ -49,28 +49,4 @@ public class GameWindowModel implements IGameModel {
         sc = new SocketConnection("127.0.0.1", 80);
     }
 
-    @Override
-    public int getNextPlayer() {
-        return 0;
-    }
-
-    @Override
-    public boolean play(int col, int row) {
-        return false;
-    }
-
-    @Override
-    public boolean isGameOver() {
-        return false;
-    }
-
-    @Override
-    public int getWinner() {
-        return 0;
-    }
-
-    @Override
-    public void newGame() {
-
-    }
 }

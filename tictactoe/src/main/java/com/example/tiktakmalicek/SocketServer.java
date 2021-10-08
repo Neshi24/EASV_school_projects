@@ -1,5 +1,6 @@
 package com.example.tiktakmalicek;
 
+
 import java.net.*;
 import java.io.*;
 import java.util.*;
@@ -7,19 +8,22 @@ import java.util.*;
 public class SocketServer extends Thread{
 
     private ServerSocket serverSocket;
-    private List<ClientHandler> handlers = new ArrayList<>();
-    private final int port = 80;
+    private static final int port = 80;
 
     public void run() {
         try {
             serverSocket = new ServerSocket(port);
             System.out.println("Server listening on port :" + port);
+            GameServer gameServer = new GameServer();
+
             while (true){
                 ClientHandler clientHandler = new ClientHandler(serverSocket.accept());
-                this.handlers.add(clientHandler);
                 clientHandler.start();
-                System.out.println("Incoming connection: ");
+                long clientID = clientHandler.getId();
+                System.out.println("Incoming connection: " + clientID);
+                gameServer.addPlayer("player" + clientID, "x", clientID);
             }
+            //stopServer();
         } catch (Exception e){
             System.out.println(Arrays.toString(e.getStackTrace()));
         }
@@ -33,7 +37,6 @@ public class SocketServer extends Thread{
             System.out.println(Arrays.toString(e.getStackTrace()));
         }
     }
-
 
     private static class ClientHandler extends Thread {
         private Socket clientSocket;

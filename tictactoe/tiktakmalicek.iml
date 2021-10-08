@@ -38,5 +38,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-messaging:5.3.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.10" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:22.0.0" level="project" />
   </component>
 </module>
