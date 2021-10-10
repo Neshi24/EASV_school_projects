@@ -13,16 +13,13 @@ import javafx.stage.Stage;
 
 public class WelcomeScreenController {
     @FXML
-    private Button startGameButton;
-
-    @FXML
     private TextField userNameField;
 
     @FXML
     private Label ipLabel;
 
     @FXML
-    protected void startGameButtonClick(ActionEvent event) throws Exception{
+    private void startGameButtonClick(ActionEvent event) throws Exception{
         String userName = userNameField.getText();
         if(userName.isBlank()){
             //user didnt provide username
@@ -35,26 +32,17 @@ public class WelcomeScreenController {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("GameWindow.fxml"));
         Parent root = loader.load();
-        GameWindowController gwc = loader.getController();
-        gwc.setId(userName);
+
         stage.setTitle(userName);
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
     @FXML
-    protected void startLocalServerButton(ActionEvent event) throws Exception {
-        SocketServer server;
-        Thread t;
-        try{
-            server = new SocketServer();
-            t = new Thread(server);
-            t.start();
-        } catch (Exception e){
-
-        }
-
+    private void startLocalServerButton(ActionEvent event) throws Exception {
+        new SocketServer().start();
         ipLabel.setText("Localhost server started");
     }
 }

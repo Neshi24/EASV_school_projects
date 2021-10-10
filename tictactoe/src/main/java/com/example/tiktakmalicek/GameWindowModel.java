@@ -2,51 +2,71 @@ package com.example.tiktakmalicek;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 
 public class GameWindowModel {
 
-    private SocketConnection sc;
+    private SocketClient sc;
     private GraphicsContext context;
     private Canvas canvas;
-    private final int blockSize = 100;
-    private final int nRows = 3;
-    private final int nCols = 3;
+    private static final int blockSize = 50;
+    private int nRows;
+    private int nCols;
+    private Move[] moves;
 
     public GameWindowModel(){
         establishConnection();
     }
 
-    private void startGame(){
+    private void drawCanvas(){
+        nRows = (int)canvas.getHeight() / blockSize;
+        nCols = (int)canvas.getWidth() / blockSize;
         context.setFill(Color.LIGHTGRAY);
         context.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         context.setStroke(Color.GRAY);
         context.setLineWidth(2);
-        for(int i = 1; i < nRows; i++){ //hor
+        for(int i = 0; i <= nRows; i++){ //hor
             context.strokeLine(0, i*blockSize, canvas.getWidth(), i*blockSize);
         }
-        for(int i = 1; i < nCols; i++){ //ver
+        for(int i = 0; i <= nCols; i++){ //ver
             context.strokeLine(i*blockSize, 0, i*blockSize, canvas.getHeight());
         }
+    }
+
+    private void establishConnection(){
+        sc = new SocketClient("127.0.0.1", 8080);
+        sc.start();
+        System.out.println("client connected to server");
     }
 
     public void setCanvas(Canvas canvas){
         this.canvas = canvas;
         this.context = canvas.getGraphicsContext2D();
-        startGame();
+        drawCanvas();
     }
 
-    public SocketConnection connection(){
-        if(this.sc.isDisconnected()){
+    public void canvasClicked(MouseEvent event) throws Exception{
+        //user clicked on canvas
+        double mX = event.getSceneX();
+        double mY = event.getSceneY();
+        Move move = mousePointToMove(mX, mY);
+        //System.out.println(move.toString());
+        sc.sendData(move.toString());
+    }
+
+    public void validConnection(){
+        if(sc.isDisconnected()){
             establishConnection();
         }
-        return this.sc;
     }
 
-    private void establishConnection(){
-        sc = new SocketConnection("127.0.0.1", 80);
+    public Move mousePointToMove(double mX, double mY){
+        int col = (int) mX / blockSize;
+        int row = (int) mY / blockSize;
+        //System.out.println(col + " " + row);
+        return new Move(col, row, "x");
     }
 
 }
