@@ -4,6 +4,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 public class GameWindowModel {
 
@@ -25,13 +26,24 @@ public class GameWindowModel {
         context.setFill(Color.LIGHTGRAY);
         context.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
-        context.setStroke(Color.GRAY);
-        context.setLineWidth(2);
+
         for(int i = 0; i <= nRows; i++){ //hor
+            context.setStroke(Color.RED);
+            context.setLineWidth(2);
             context.strokeLine(0, i*blockSize, canvas.getWidth(), i*blockSize);
+            if (i%3 == 0 ){
+                context.setLineWidth(5);
+                context.strokeLine(0, i*blockSize, canvas.getWidth(), i*blockSize);
+            }
+
         }
-        for(int i = 0; i <= nCols; i++){ //ver
+        for(int i = 0; i <= nCols  ; i++){ //ver
+            context.setLineWidth(1);
             context.strokeLine(i*blockSize, 0, i*blockSize, canvas.getHeight());
+            if (i%3 == 0 ){
+                context.setLineWidth(5);
+                context.strokeLine(i*blockSize, 0, i*blockSize, canvas.getHeight());
+            }
         }
     }
 
@@ -47,12 +59,14 @@ public class GameWindowModel {
         drawCanvas();
     }
 
+
     public void canvasClicked(MouseEvent event) throws Exception{
         //user clicked on canvas
         double mX = event.getSceneX();
         double mY = event.getSceneY();
-        Move move = mousePointToMove(mX, mY);
+        Move move = Move.mousePointToMove(mX, mY, blockSize, "X");
         //System.out.println(move.toString());
+        moveToSign(move);
         sc.sendData(move.toString());
     }
 
@@ -61,12 +75,11 @@ public class GameWindowModel {
             establishConnection();
         }
     }
-
-    public Move mousePointToMove(double mX, double mY){
-        int col = (int) mX / blockSize;
-        int row = (int) mY / blockSize;
-        //System.out.println(col + " " + row);
-        return new Move(col, row, "x");
+    public void moveToSign(Move move){
+        int cX = (move.getRow() * blockSize + 10);
+        int cY = (move.getCol() * blockSize + 40);
+        context.setFill(Color.BLUE);
+        context.setFont(Font.font("Arial", 42.4));
+        context.fillText(move.getSign(), cX, cY);
     }
-
 }

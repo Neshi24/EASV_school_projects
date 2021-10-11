@@ -67,7 +67,7 @@ public class SocketClient extends Thread{
             try{
                 String received;
                 while((received = in.readUTF()) != null ){
-                    //System.out.println(received);
+                    System.out.println(received);
                     client.setMoves(Move.solveMoves(received));
                     System.out.println(client.getMoves().toString());
                 }

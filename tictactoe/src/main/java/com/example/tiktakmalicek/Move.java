@@ -5,32 +5,36 @@ import java.util.List;
 
 public class Move {
 
-    private int x, y;
+    private int row, col;
     private String name = "PLAYER";
     private String sign;
 
-    public Move(int x, int y, String sign){
-        this.x = x;
-        this.y = y;
+    public Move(int row, int col, String sign){
+        this.row = row;
+        this.col = col;
         this.sign = sign;
     }
 
-    public int getX() {
-        return this.x;
+    public int getRow() {
+        return this.row;
     }
 
-    public int getY() {
-        return this.y;
-    }
+    public int getCol() {return this.col;}
 
     public String getName() {
         return this.name;
     }
 
     public String getSign() {
-        return sign;
+        return this.sign;
+    }
+    public void setSign(String sign){
+        this.sign = sign;
     }
 
+    public void altSign(){
+        this.setSign(this.getSign().equals("X") ? "O" : "X");
+    }
 
     //for Client
     public static Move stringToMove(String input){
@@ -56,13 +60,25 @@ public class Move {
         String out = "";
         for (Move move :
                 moves) {
-            out += move.getX() + "," + move.getY() + "," + move.getSign() + ";";
+            out += move.getRow() + "," + move.getCol() + "," + move.getSign() + ";";
         }
         return out;
     }
 
     //for Client
     public String toString(){
-        return this.x + "," + this.y + "," + this.sign;
+        return this.row + "," + this.col + "," + this.sign;
     }
+
+    public static Move mousePointToMove(double mX, double mY, int blockSize, String sign){
+        int col = (int) mX / blockSize;
+        int row = (int) mY / blockSize;
+        //System.out.println(col + " " + row);
+        return new Move(col, row, sign);
+    }
+
+
+
+
+
 }
