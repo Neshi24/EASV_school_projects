@@ -50,11 +50,11 @@ public class SocketServer extends Thread{
         this.moves.add(move);
     }
 
-    synchronized List getMoves(){
+    synchronized List<Move> getMoves(){
         return this.moves;
     }
 
-    synchronized List getClients() { return this.clients; }
+    synchronized List<DataOutputStream> getClients() { return this.clients; }
 
     synchronized void removeFromClients(DataOutputStream remoteOut) { clients.remove(remoteOut); }
 

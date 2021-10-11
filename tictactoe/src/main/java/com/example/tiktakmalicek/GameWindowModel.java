@@ -64,7 +64,7 @@ public class GameWindowModel {
         //user clicked on canvas
         double mX = event.getSceneX();
         double mY = event.getSceneY();
-        Move move = Move.mousePointToMove(mX, mY, blockSize, "X");
+        Move move = mousePointToMove(mX, mY, "X");
         //System.out.println(move.toString());
         moveToSign(move);
         sc.sendData(move.toString());
@@ -81,5 +81,12 @@ public class GameWindowModel {
         context.setFill(Color.BLUE);
         context.setFont(Font.font("Arial", 42.4));
         context.fillText(move.getSign(), cX, cY);
+    }
+
+    public Move mousePointToMove(double mX, double mY, String sign){
+        int col = (int) mX / blockSize;
+        int row = (int) mY / blockSize;
+        //System.out.println(col + " " + row);
+        return new Move(col, row, sign);
     }
 }

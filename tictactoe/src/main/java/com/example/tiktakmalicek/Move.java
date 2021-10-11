@@ -28,19 +28,16 @@ public class Move {
     public String getSign() {
         return this.sign;
     }
+
     public void setSign(String sign){
         this.sign = sign;
-    }
-
-    public void altSign(){
-        this.setSign(this.getSign().equals("X") ? "O" : "X");
     }
 
     //for Client
     public static Move stringToMove(String input){
         String[] commands = input.split(",");
         if(commands.length > 2){
-            return new Move(Integer.parseInt(commands[0]) , Integer.parseInt(commands[1]), commands[2]);
+            return new Move(Integer.parseInt(commands[0]), Integer.parseInt(commands[1]), commands[2]);
         }
         return null;
     }
@@ -69,16 +66,4 @@ public class Move {
     public String toString(){
         return this.row + "," + this.col + "," + this.sign;
     }
-
-    public static Move mousePointToMove(double mX, double mY, int blockSize, String sign){
-        int col = (int) mX / blockSize;
-        int row = (int) mY / blockSize;
-        //System.out.println(col + " " + row);
-        return new Move(col, row, sign);
-    }
-
-
-
-
-
 }
