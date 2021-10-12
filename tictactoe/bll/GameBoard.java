@@ -114,12 +114,12 @@ public class GameBoard implements IGameModel
     {
         //check if there's any square left to be clicked
         //if not, it's a draw
-        //if player2 is on turn player1 won and vice-versa
+        //otherwise return player's id that won the game
         canDoNextTurn = false;
         if(!checkAvailableSquare()){
             return -1;
         }
-        return (turn ? player2id : player1id);
+        return turnToPlayerNumber();
     }
 
     /**
