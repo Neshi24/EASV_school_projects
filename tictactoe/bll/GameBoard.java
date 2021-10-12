@@ -5,7 +5,12 @@
  */
 package tictactoe.bll;
 
-import java.util.Arrays;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+
+import java.util.List;
 
 /**
  *
@@ -15,13 +20,21 @@ import java.util.Arrays;
 public class GameBoard implements IGameModel
 {
 
+    private Label playerLabel;
+    private Button newGameButton;
+    private GridPane squaresGrid;
+
+
     private boolean turn;
     private int[][] squares;
     private final int player1id = 1;
     private final int player2id = 2;
     private boolean canDoNextTurn;
 
-    public GameBoard(){
+    public GameBoard(Label playerLabel, Button newGameButton, GridPane squaresGrid){
+        this.playerLabel = playerLabel;
+        this.newGameButton = newGameButton;
+        this.squaresGrid = squaresGrid;
         newGame();
     }
 

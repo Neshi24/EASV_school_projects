@@ -6,6 +6,8 @@
 package tictactoe.gui.controller;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import tictactoe.bll.*;
 
@@ -25,16 +29,15 @@ public class TicTacViewController implements Initializable
 {
 
     @FXML
-    private Label lblPlayer;
+    private AnchorPane anchorPaneGames;
 
     @FXML
-    private Button btnNewGame;
+    private BorderPane borderGame1, borderGame2 ,borderGame3 ,borderGame4 ,borderGame5 , borderGame6;
 
-    @FXML
-    private GridPane gridPane;
-    
     private static final String TXT_PLAYER = "Player: ";
-    private GameBoard game;
+
+    private List<BorderPane> gameBoards;
+    private List<GameBoard> games;
 
     @FXML
     private void handleButtonAction(ActionEvent event)
@@ -68,27 +71,50 @@ public class TicTacViewController implements Initializable
         }
     }
 
-    @FXML
-    private void handleNewGame(ActionEvent event)
+    private void handleNewGame(GameBoard game)
     {
         game.newGame();
-        setPlayer();
+        setPlayer(game);
         clearBoard();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        game = new GameBoard();
-        setPlayer();
+        for (Node bps : anchorPaneGames.getChildren()) {
+            if(bps instanceof BorderPane){
+                BorderPane bp = (BorderPane) bps;
+                gameBoards.add(bp);
+
+                Label playerLabel = new Label();
+                Button newGameButton = new Button();
+                GridPane squaresGrid = new GridPane();
+
+                for(Node node : bp.getChildren()){
+                    if(node instanceof Label){
+                        playerLabel = (Label) node;
+                    }
+                    else if(node instanceof Button){
+                        newGameButton = (Button) node;
+                    }
+                    else if(node instanceof GridPane){
+                        squaresGrid = (GridPane) node;
+                    }
+                }
+
+                GameBoard game = new GameBoard(playerLabel, newGameButton, squaresGrid);
+                games.add(game);
+            }
+        }
+
     }
 
-    private void setPlayer()
+    public static void setPlayer(Label label, GameBoard game)
     {
-        lblPlayer.setText(TXT_PLAYER + game.turnToPlayerNumber() + " is on turn");
+        label.setText(TXT_PLAYER + game.turnToPlayerNumber() + " is on turn");
     }
 
-    private void displayWinner(int winner)
+    public static void displayWinner(Label label, int winner)
     {
         String message = "";
         switch (winner)
@@ -100,10 +126,10 @@ public class TicTacViewController implements Initializable
                 message = "Player " + winner + " wins!!!";
                 break;
         }
-        lblPlayer.setText(message);
+        label.setText(message);
     }
 
-    private void clearBoard()
+    public static void clearBoard(GridPane gridPane)
     {
         for(Node n : gridPane.getChildren())
         {
