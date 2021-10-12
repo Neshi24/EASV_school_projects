@@ -111,12 +111,22 @@ public class GameBoard implements IGameModel
     {
         //check if there's any square left to be clicked
         //if not, it's a draw
+<<<<<<< HEAD:tictactoe/src/main/java/GameBoard.java
         //otherwise returns the player id that won the game
         canDoNextTurn = false;
+=======
+        //if player2 is on turn player1 won and vice-versa
+>>>>>>> parent of a77f200 (fixed win conditions):tictactoe/bll/GameBoard.java
         if(!checkAvailableSquare()){
+            canDoNextTurn = false;
             return -1;
         }
+<<<<<<< HEAD:tictactoe/src/main/java/GameBoard.java
         return (turn ? player1id : player2id);
+=======
+        canDoNextTurn = false;
+        return (turn ? player2id : player1id);
+>>>>>>> parent of a77f200 (fixed win conditions):tictactoe/bll/GameBoard.java
     }
 
     /**
