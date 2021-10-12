@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tictactoe.gui.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +13,6 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import tictactoe.bll.*;
 
 
 /**
