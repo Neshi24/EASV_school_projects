@@ -49,19 +49,17 @@ public class TicTacViewController implements Initializable
                 Integer col = GridPane.getColumnIndex((Node) event.getSource());
                 int r = (row == null) ? 0 : row;
                 int c = (col == null) ? 0 : col;
-                int player = game.turnToPlayerNumber();
+                int player = game.getNextPlayer();
                 if (game.play(c, r))
                 {
                     Button btn = (Button) event.getSource();
                     String xOrO = player == 1 ? "O" : "X";
                     btn.setText(xOrO);
+                    setPlayer();
                     if (game.isGameOver())
                     {
                         int winner = game.getWinner();
                         displayWinner(winner);
-                    } else {
-                        player = game.getNextPlayer();
-                        setPlayer();
                     }
                 }
             }
