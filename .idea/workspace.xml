@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4f8f611-f889-44df-8a29-1c6153019c37" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/GameWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/GameWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/GameWindowModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/GameWindowModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/SocketConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/SocketConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/SocketServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/WelcomeScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/java/com/example/tiktakmalicek/WelcomeScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/src/main/resources/com/example/tiktakmalicek/GameWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/src/main/resources/com/example/tiktakmalicek/GameWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameServer$Board$Square.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameServer$Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameServer$Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameWindowModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/GameWindowModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/SocketConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/SocketConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/SocketServer$ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/SocketServer$ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/SocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/SocketServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/WelcomeScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe/target/classes/com/example/tiktakmalicek/WelcomeScreenController.class" afterDir="false" />
+    <list default="true" id="b4f8f611-f889-44df-8a29-1c6153019c37" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +22,32 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.5767716" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="EASV_school_projects" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -51,6 +55,33 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="EASV_school_projects" />
       <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -66,10 +97,22 @@
       <updated>1633529701605</updated>
       <workItem from="1633529703028" duration="35000" />
       <workItem from="1633786157400" duration="31000" />
+      <workItem from="1634031647057" duration="139000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
