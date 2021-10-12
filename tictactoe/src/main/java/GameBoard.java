@@ -3,9 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tictactoe.bll;
-
-import java.util.Arrays;
 
 /**
  *
@@ -124,6 +121,7 @@ public class GameBoard implements IGameModel
 
     /**
      * Resets the game to a new game state.
+     * new int[3][3] results in a new array filled with 0s
      */
     public void newGame()
     {
