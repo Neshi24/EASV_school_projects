@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tictactoe.gui;
 
-import java.net.URL;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,19 +20,12 @@ public class TicTacToe extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-     
-        
         Parent root = FXMLLoader.load(getClass().getResource("views/TicTacView.fxml"));
-        
         Scene scene = new Scene(root);
-        
-        
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("Tic Tac Toe");
         stage.centerOnScreen();
-        
-        
         stage.show();
     }
 

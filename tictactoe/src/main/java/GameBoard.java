@@ -3,14 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tictactoe.bll;
-
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-
-import java.util.List;
 
 /**
  *
@@ -20,21 +12,13 @@ import java.util.List;
 public class GameBoard implements IGameModel
 {
 
-    private Label playerLabel;
-    private Button newGameButton;
-    private GridPane squaresGrid;
-
-
     private boolean turn;
     private int[][] squares;
     private final int player1id = 1;
     private final int player2id = 2;
     private boolean canDoNextTurn;
 
-    public GameBoard(Label playerLabel, Button newGameButton, GridPane squaresGrid){
-        this.playerLabel = playerLabel;
-        this.newGameButton = newGameButton;
-        this.squaresGrid = squaresGrid;
+    public GameBoard(){
         newGame();
     }
 
@@ -127,17 +111,17 @@ public class GameBoard implements IGameModel
     {
         //check if there's any square left to be clicked
         //if not, it's a draw
-        //if player2 is on turn player1 won and vice-versa
+        //otherwise returns the player id that won the game
+        canDoNextTurn = false;
         if(!checkAvailableSquare()){
-            canDoNextTurn = false;
             return -1;
         }
-        canDoNextTurn = false;
-        return (turn ? player2id : player1id);
+        return (turn ? player1id : player2id);
     }
 
     /**
      * Resets the game to a new game state.
+     * new int[3][3] results in a new array filled with 0s
      */
     public void newGame()
     {
