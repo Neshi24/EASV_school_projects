@@ -12,8 +12,9 @@
 public class GameBoard implements IGameModel
 {
 
+
     private boolean turn;
-    private int[][] squares;
+    public int[][] squares;
     private final int player1id = 1;
     private final int player2id = 2;
     private boolean canDoNextTurn;
@@ -150,7 +151,7 @@ public class GameBoard implements IGameModel
      *
      * @return true if there's a square a player can click on / false if none
      */
-    private boolean checkAvailableSquare(){
+    public boolean checkAvailableSquare(){
         for (int[] i : squares) {
             for (int j : i) {
                 if(j == 0){
